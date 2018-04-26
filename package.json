@@ -1,0 +1,21 @@
+{
+  "name": "react-orbit",
+  "version": "0.1.0",
+  "homepage": "https://tgiachett.github.io/react-orbit/",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "deploy" : "npm run build&&gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}
