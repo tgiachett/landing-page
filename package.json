@@ -1,7 +1,7 @@
 {
-  "name": "react-orbit",
+  "name": "react-orbit-expanded",
   "version": "0.1.0",
-  "homepage": "https://tgiachett.github.io/react-orbit/",
+  "homepage": "https://tgiachett.github.io/react-orbit-expanded/",
   "private": true,
   "dependencies": {
     "react": "^16.3.2",
