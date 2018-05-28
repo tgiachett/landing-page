@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Sun from './components/Sun'
+import Sun from './components/Orbit/Sun'
 class App extends Component {
   render() {
     return (
