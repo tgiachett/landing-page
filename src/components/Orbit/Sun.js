@@ -41,7 +41,7 @@ zoomTo = (element) => {
 
 
 
-//style={{ backgroundColor: "#11031d"}}
+
   render() {
     
     let viewbox = `${this.state.box.x} ${this.state.box.y}  ${this.state.box.width} ${this.state.box.height}`
@@ -66,7 +66,8 @@ zoomTo = (element) => {
       SurfacePressure: '0',
       NumberofMoons: '0',
       RingSystem: 'No',
-      GlobalMagneticField: 'Yes' },
+      GlobalMagneticField: 'Yes',
+      Color: '#9e999b' },
    
     { Name: 'VENUS',
       Mass: '0.815',
@@ -86,7 +87,8 @@ zoomTo = (element) => {
       SurfacePressure: '92',
       NumberofMoons: '0',
       RingSystem: 'No',
-      GlobalMagneticField: 'No' },
+      GlobalMagneticField: 'No',
+      Color: '#DE5F25' },
    
     { Name: 'EARTH',
       Mass: '1',
@@ -106,7 +108,8 @@ zoomTo = (element) => {
       SurfacePressure: '1',
       NumberofMoons: '1',
       RingSystem: 'No',
-      GlobalMagneticField: 'Yes' },
+      GlobalMagneticField: 'Yes',
+      Color: '#182A61' },
    
     { Name: 'MARS',
       Mass: '0.107',
@@ -126,7 +129,8 @@ zoomTo = (element) => {
       SurfacePressure: '0.01',
       NumberofMoons: '2',
       RingSystem: 'No',
-      GlobalMagneticField: 'No' },
+      GlobalMagneticField: 'No',
+      Color: '#FDBF01' },
    
     { Name: 'JUPITER',
       Mass: '317.8',
@@ -136,7 +140,7 @@ zoomTo = (element) => {
       EscapeVelocity: '5.32',
       RotationPeriod: '0.415',
       LengthofDay: '0.414',
-      DistancefromSun: '5.20',
+      DistancefromSun: '3.20',
       Perihelion: '5.03',
       Aphelion: '5.37',
       OrbitalPeriod: '11.9',
@@ -146,7 +150,8 @@ zoomTo = (element) => {
       SurfacePressure: 'Unknown*',
       NumberofMoons: '79',
       RingSystem: 'Yes',
-      GlobalMagneticField: 'Yes' },
+      GlobalMagneticField: 'Yes',
+      Color: '#C1844D' },
    
     { Name: 'SATURN',
       Mass: '95.2',
@@ -156,7 +161,7 @@ zoomTo = (element) => {
       EscapeVelocity: '3.17',
       RotationPeriod: '0.445',
       LengthofDay: '0.444',
-      DistancefromSun: '9.58',
+      DistancefromSun: '6.58',
       Perihelion: '9.20',
       Aphelion: '9.96',
       OrbitalPeriod: '29.4',
@@ -166,7 +171,8 @@ zoomTo = (element) => {
       SurfacePressure: 'Unknown*',
       NumberofMoons: '62',
       RingSystem: 'Yes',
-      GlobalMagneticField: 'Yes' },
+      GlobalMagneticField: 'Yes',
+      Color: '#E0CDAD' },
    
     { Name: 'URANUS',
       Mass: '14.5',
@@ -176,7 +182,7 @@ zoomTo = (element) => {
       EscapeVelocity: '1.90',
       RotationPeriod: '-0.720',
       LengthofDay: '0.718',
-      DistancefromSun: '19.20',
+      DistancefromSun: '10.20',
       Perihelion: '18.64',
       Aphelion: '19.75',
       OrbitalPeriod: '83.7',
@@ -186,7 +192,8 @@ zoomTo = (element) => {
       SurfacePressure: 'Unknown*',
       NumberofMoons: '27',
       RingSystem: 'Yes',
-      GlobalMagneticField: 'Yes' },
+      GlobalMagneticField: 'Yes',
+      Color: '#9FC4CA' },
    
     { Name: 'NEPTUNE',
       Mass: '17.1',
@@ -196,7 +203,7 @@ zoomTo = (element) => {
       EscapeVelocity: '2.10',
       RotationPeriod: '0.673',
       LengthofDay: '0.671',
-      DistancefromSun: '30.05',
+      DistancefromSun: '14.05',
       Perihelion: '30.22',
       Aphelion: '29.89',
       OrbitalPeriod: '163.7',
@@ -206,7 +213,8 @@ zoomTo = (element) => {
       SurfacePressure: 'Unknown*',
       NumberofMoons: '14',
       RingSystem: 'Yes',
-      GlobalMagneticField: 'Yes' },
+      GlobalMagneticField: 'Yes',
+      Color: '#3454DF' },
    
     { Name: 'PLUTO',
       Mass: '0.0025',
@@ -216,7 +224,7 @@ zoomTo = (element) => {
       EscapeVelocity: '0.116',
       RotationPeriod: '6.41',
       LengthofDay: '6.39',
-      DistancefromSun: '39.48',
+      DistancefromSun: '20.48',
       Perihelion: '30.16',
       Aphelion: '48.49',
       OrbitalPeriod: '247.9',
@@ -226,27 +234,30 @@ zoomTo = (element) => {
       SurfacePressure: '0.00001',
       NumberofMoons: '5',
       RingSystem: 'No',
-      GlobalMagneticField: 'Unknown' } ]
+      GlobalMagneticField: 'Unknown',
+      Color: '#7C6241' } ]
    
-    const computedEarth = {
+      
+      const computedEarth = {
+      r: planets[2].Diameter/2 * 5,
       rx: planets[2].DistancefromSun * 100,
       ry: planets[2].DistancefromSun * 100 *.3,
-      orbitTime: planets[2].OrbitalPeriod * 60,
-      r: planets[2].Diameter/2 * 5
+      orbitTime: planets[2].OrbitalPeriod * 60
+      
     }
 
-    function getRandomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+    // function getRandomColor() {
+    //   var letters = '0123456789ABCDEF';
+    //   var color = '#';
+    //   for (var i = 0; i < 6; i++) {
+    //     color += letters[Math.floor(Math.random() * 16)];
+    //   }
+    //   return color;
+    // }
 
     return (
-      // techdebt:  iterate planet creation with for in loop
-      <svg  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox={viewbox} width="100%">
+      // techdebt:  iterate planet creation with for in loop viewBox={`-${planets[5].DistancefromSun * computedEarth.rx} -${planets[5].DistancefromSun * computedEarth.ry} ${planets[5].DistancefromSun * 2.5 * computedEarth.rx} ${planets[5].DistancefromSun * 2.5 * computedEarth.ry}`}
+      <svg  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="-1000 -1000 2000 2000" >
        
         <defs>
         
@@ -262,19 +273,19 @@ zoomTo = (element) => {
         <g>
         <ellipse id="planet1Orbit" cx={window.innerWidth/2} cy={window.innerHeight/2} rx={computedEarth.rx} ry={computedEarth.ry} fill="none" stroke="#C8C8C8"/>
         
-          <circle ref='earthRef' id="planet1" cx={window.innerWidth/2 - computedEarth.rx} cy={window.innerHeight/2} r={computedEarth.r} fill="#336" stroke="none"  >  
+          <circle ref='earthRef' id="planet1" cx={window.innerWidth/2 - computedEarth.rx} cy={window.innerHeight/2} r={computedEarth.r} fill={planets[2].Color} stroke="none"  >  
         
           <animateMotion begin="0s" dur={`${computedEarth.orbitTime}s`} repeatCount="indefinite" path={`M-0,0a${computedEarth.rx},${computedEarth.ry} 0 1,0 ${computedEarth.rx*2},0a${computedEarth.rx},${computedEarth.ry} 0 1,0 ${-computedEarth.rx*2},0`} />
           </circle>
         </g>
         
-        {planets.map(p => (
+        {planets.map((p, index) => (
           
-        <g>
+        <g key={index}>
           <ellipse cx={window.innerWidth/2} cy={window.innerHeight/2} rx={computedEarth.rx * p.DistancefromSun} ry={computedEarth.ry * p.DistancefromSun} fill="none" stroke="#C8C8C8"/>
         
           
-          <circle ref='earthRef' id="planet1" cx={window.innerWidth/2 -(computedEarth.rx * p.DistancefromSun)} cy={window.innerHeight/2} r={computedEarth.r * p.Diameter} fill={getRandomColor()} stroke="none" style={{filter: 'url(#planetFilter)'}} >  
+          <circle  ref='earthRef' id="planet1" cx={window.innerWidth/2 -(computedEarth.rx * p.DistancefromSun)} cy={window.innerHeight/2} r={computedEarth.r * p.Diameter} fill={p.Color} stroke="none" style={{filter: 'url(#planetFilter)'}} >  
           <animateMotion begin="0s" dur={`${computedEarth.orbitTime * p.OrbitalPeriod}s`} repeatCount="indefinite" path={`M-0,0a${computedEarth.rx * p.DistancefromSun},${computedEarth.ry * p.DistancefromSun} 0 1,0 ${computedEarth.rx *2 * p.DistancefromSun},0a${computedEarth.rx * p.DistancefromSun},${computedEarth.ry * p.DistancefromSun} 0 1,0 ${-computedEarth.rx*2 * p.DistancefromSun},0`} />
           </circle>
         </g>
