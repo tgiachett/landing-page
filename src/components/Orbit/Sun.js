@@ -1,50 +1,11 @@
 import React, { Component } from "react";
-
+// import Profile from './Profile'
 
 class Sun extends Component {
   // these are the initial values, and perhaps the values that should be used for the zoomout function
-  constructor(props) {
-    super(props);
-    this.state = {
-      box: {
-        x: 0,
-        y: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      },
-      zoomed: false
-
-      
-    }
   
-  }
-// this is an empty componentdidmount
-  componentDidMount() {  
-  }
- 
-zoomTo = (element) => {
-  //set the zoomed switch to true to start tracking
-  this.setState({})
-//track the element while zoomed
-  
-    this.setState({
-      box: {
-        width: element.getBoundingClientRect().width + 20,
-        height: element.getBoundingClientRect().height + 20,
-        x:element.getBoundingClientRect().x,
-        y: element.getBoundingClientRect().y
-      }
-    })
-}
-
-
-
-
-
-
   render() {
     
-    let viewbox = `${this.state.box.x} ${this.state.box.y}  ${this.state.box.width} ${this.state.box.height}`
     
 
    const planets = [
@@ -239,12 +200,14 @@ zoomTo = (element) => {
    
       
       const computedEarth = {
-      r: planets[2].Diameter/2 * 5,
-      rx: planets[2].DistancefromSun * 100,
-      ry: planets[2].DistancefromSun * 100 *.3,
+      r: planets[2].Diameter/2 * 15,
+      rx: planets[2].DistancefromSun * 700,
+      ry: planets[2].DistancefromSun * 700 *.3,
       orbitTime: planets[2].OrbitalPeriod * 60
       
     }
+
+    const sunR = 120
 
     // function getRandomColor() {
     //   var letters = '0123456789ABCDEF';
@@ -257,7 +220,7 @@ zoomTo = (element) => {
 
     return (
       // techdebt:  iterate planet creation with for in loop viewBox={`-${planets[5].DistancefromSun * computedEarth.rx} -${planets[5].DistancefromSun * computedEarth.ry} ${planets[5].DistancefromSun * 2.5 * computedEarth.rx} ${planets[5].DistancefromSun * 2.5 * computedEarth.ry}`}
-      <svg  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="-1000 -1000 2000 2000" >
+      <svg  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="-3000 -2000 6500 4000" >
        
         <defs>
         
@@ -269,7 +232,7 @@ zoomTo = (element) => {
         </filter>
         </defs>
         {/* sun */}
-        <circle cx={window.innerWidth/2} cy={window.innerHeight/2} r={computedEarth.r * 5} fill="#fa3" stroke="none"/>
+        <circle cx={window.innerWidth/2} cy={window.innerHeight/2} r={sunR} fill="#fa3" stroke="none"/>
         <g>
         <ellipse id="planet1Orbit" cx={window.innerWidth/2} cy={window.innerHeight/2} rx={computedEarth.rx} ry={computedEarth.ry} fill="none" stroke="#C8C8C8"/>
         
@@ -282,15 +245,16 @@ zoomTo = (element) => {
         {planets.map((p, index) => (
           
         <g key={index}>
-          <ellipse cx={window.innerWidth/2} cy={window.innerHeight/2} rx={computedEarth.rx * p.DistancefromSun} ry={computedEarth.ry * p.DistancefromSun} fill="none" stroke="#C8C8C8"/>
+          <ellipse cx={window.innerWidth/2} cy={window.innerHeight/2} rx={computedEarth.rx * Math.sqrt(p.DistancefromSun)} ry={computedEarth.ry * Math.sqrt(p.DistancefromSun)} fill="none" stroke="#C8C8C8"/>
         
           
-          <circle  ref='earthRef' id="planet1" cx={window.innerWidth/2 -(computedEarth.rx * p.DistancefromSun)} cy={window.innerHeight/2} r={computedEarth.r * p.Diameter} fill={p.Color} stroke="none" style={{filter: 'url(#planetFilter)'}} >  
-          <animateMotion begin="0s" dur={`${computedEarth.orbitTime * p.OrbitalPeriod}s`} repeatCount="indefinite" path={`M-0,0a${computedEarth.rx * p.DistancefromSun},${computedEarth.ry * p.DistancefromSun} 0 1,0 ${computedEarth.rx *2 * p.DistancefromSun},0a${computedEarth.rx * p.DistancefromSun},${computedEarth.ry * p.DistancefromSun} 0 1,0 ${-computedEarth.rx*2 * p.DistancefromSun},0`} />
+          <circle  ref='earthRef' id="planet1" cx={window.innerWidth/2 -(computedEarth.rx * Math.sqrt(p.DistancefromSun))} cy={window.innerHeight/2} r={computedEarth.r * p.Diameter} fill={p.Color} stroke="none" style={{filter: 'url(#planetFilter)'}} >  
+          <animateMotion begin="0s" dur={`${computedEarth.orbitTime * p.OrbitalPeriod}s`} repeatCount="indefinite" path={`M-0,0a${computedEarth.rx * Math.sqrt(p.DistancefromSun)},${computedEarth.ry * Math.sqrt(p.DistancefromSun)} 0 1,0 ${computedEarth.rx *2 * Math.sqrt(p.DistancefromSun)},0a${computedEarth.rx * Math.sqrt(p.DistancefromSun)},${computedEarth.ry * Math.sqrt(p.DistancefromSun)} 0 1,0 ${-computedEarth.rx*2 * Math.sqrt(p.DistancefromSun)},0`} />
           </circle>
         </g>
         
         ))}
+        
       </svg>
     )
   }
