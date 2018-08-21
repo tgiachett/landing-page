@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Sun from './components/Orbit/Sun'
+import Profile from './components/Profile/Profile'
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Sun />
+        <Profile />
       </div>
     );
   }
