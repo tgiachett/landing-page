@@ -8,7 +8,7 @@ class Profile extends React.Component {
 
 render() {
   return (
-    <div style={{ maxWidth: '1300px', width: '98%', marginTop: '1%', marginLeft: 'auto', marginRight: 'auto'}}>
+    <div style={{ maxWidth: '1300px', width: '100%', marginTop: '1%', marginLeft: 'auto', marginRight: 'auto'}}>
       
         <SvgJsonContainer className="imageContainer" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto' }}   data={data} />
       
@@ -24,7 +24,6 @@ render() {
             <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
           </svg>
         </a>
-  
         <a style={{margin: '.5em'}} href="https://www.linkedin.com/in/tobia-giachetti/">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path  d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z"/>
