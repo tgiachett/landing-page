@@ -17,14 +17,16 @@ class Svg extends React.Component {
     return (
 
     <svg
-   xmlns={this.props.xmlns}
-   viewBox={this.props.viewBox}
-   width={this.props.width}
-   height={this.props.height}
-   id={this.props.id}
-   style={this.props.style}
-   version="1.1">
-    
+    xmlns={this.props.xmlns}
+    viewBox={this.props.viewBox}
+    width={this.props.width}
+    height={this.props.height}
+    id={this.props.id}
+    style={this.props.style}
+    preserveAspectRatio={this.props.preserveAspectRatio}
+    version="1.1">
+
+
       
     {pathsSet}
 

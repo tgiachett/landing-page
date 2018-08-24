@@ -121,13 +121,15 @@ componentDidMount() {
     <Svg 
       xmlns='http://www.w3.org/2000/svg'
       viewBox={this.props.data.attributes.viewBox}
-      width={this.props.data.attributes.width}
-      height={this.props.data.attributes.height}
+      // width={this.props.data.attributes.width}
+      // height={this.props.data.attributes.height}
+      height={this.props.height}
       id={this.props.id}
       paths={this.props.data.children}
       wholeJson={this.props.data}
       pathStyleState={this.state}
       style={this.props.style}
+      preserveAspectRatio={this.props.preserveAspectRatio}
 
     >
     </Svg> 
