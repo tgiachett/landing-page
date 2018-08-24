@@ -22,6 +22,7 @@ class Svg extends React.Component {
    width={this.props.width}
    height={this.props.height}
    id={this.props.id}
+   style={this.props.style}
    version="1.1">
     
       

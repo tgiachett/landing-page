@@ -13,8 +13,7 @@ class SvgJsonContainer extends React.Component {
     let initialState = {}
     function createState(data) {
       for (let i = 0; i < data.length; i++) {
-        initialState[`style${i}`] = data[i].attributes.fill
-        
+        initialState[`style${i}`] = data[i].attributes.fill;
       }
     }
     createState(data.children)
@@ -28,24 +27,7 @@ padZero = (str, len) => {
     var zeros = new Array(len).join('0');
     return (zeros + str).slice(-len);
 }
-invertColor = (hex) => {
-  if (hex.indexOf('#') === 0) {
-      hex = hex.slice(1);
-  }
-  // convert 3-digit hex to 6-digits.
-  if (hex.length === 3) {
-      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-  }
-  if (hex.length !== 6) {
-      throw new Error('Invalid HEX color.');
-  }
-  // invert color components
-  var r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16),
-      g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16),
-      b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
-  // pad each with zeros and return
-  return '#' + this.padZero(r) + this.padZero(g) + this.padZero(b);
-}
+
 
 hextoRgb = (hex) => {
   if (hex.indexOf('#') === 0) {
@@ -54,7 +36,7 @@ hextoRgb = (hex) => {
   
   let r = parseInt(hex.slice(0, 2), 16),
       g = parseInt(hex.slice(2, 4), 16),
-      b = parseInt(hex.slice(4, 6), 16)
+      b = parseInt(hex.slice(4, 6), 16);
       return [r, g, b]
 }
 
@@ -87,14 +69,14 @@ let cycle = setInterval(() => {
         color.splice(1, 1, color[1]+1) 
         
       } else if (color[1] > randColorRgb[1]) {
-        color.splice(1, 1, color[1]-1)
+        color.splice(1, 1, color[1]-1);
       } 
 
       if (color[2] < randColorRgb[2]) {
-        color.splice(2, 1, color[2]+1) 
+        color.splice(2, 1, color[2]+1);
         
       } else if (color[2] > randColorRgb[2]) {
-        color.splice(2, 1, color[2]-1)
+        color.splice(2, 1, color[2]-1);
       } 
     
       function componentToHex(c) {
@@ -113,8 +95,8 @@ let cycle = setInterval(() => {
   if (Math.abs(color[0] - randColorRgb[0]) === 0 && 
       Math.abs(color[1] - randColorRgb[1]) === 0 &&
       Math.abs(color[2] - randColorRgb[2]) === 0) {
-        clearInterval(cycle)
-        this.colorTransform(this.state[key], key)
+        clearInterval(cycle);
+        this.colorTransform(this.state[key], key);
       }
 }, 30)
 }
@@ -124,10 +106,10 @@ componentDidMount() {
   
   setTimeout(() => {
     for (let color in this.state) {
-      this.colorTransform(this.state[color], color)
+      this.colorTransform(this.state[color], color);
     }
   
-    },3000)
+    },3000);
 }
 
   render() {
@@ -145,12 +127,9 @@ componentDidMount() {
       paths={this.props.data.children}
       wholeJson={this.props.data}
       pathStyleState={this.state}
+      style={this.props.style}
 
->
-    
-
-    
-
+    >
     </Svg> 
 
     )}
