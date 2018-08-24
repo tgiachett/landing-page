@@ -1,15 +1,11 @@
+import "./breakpoints.css";
 import React from 'react';
 import SvgJsonContainer from './SvgJsonContainer';
 const data = require('./mars.json');
-// import "./breakpoints.css";
+
 
 class Profile extends React.Component {
 
-  
-
-
-
-    
 render() {
   return (
     <div>
