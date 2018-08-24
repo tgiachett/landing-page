@@ -1,4 +1,4 @@
-import "./breakpoints.css";
+// import "./breakpoints.css";
 import React from 'react';
 import SvgJsonContainer from './SvgJsonContainer';
 const data = require('./mars.json');
@@ -8,10 +8,10 @@ class Profile extends React.Component {
 
 render() {
   return (
-    <div className='container' style={{ marginTop: '1%', marginLeft: 'auto', marginRight: 'auto'}}>
-         
-        <SvgJsonContainer className="imageContainer" style={{marginLeft: 'auto', marginRight: 'auto' }}   data={data} />
-        
+    <div className='container' style={{height: '100vh',maxWidth: '1250px', marginTop: '1%', marginLeft: 'auto', marginRight: 'auto'}}>
+      <div>
+        <SvgJsonContainer className="imageContainer" preserveAspectRatio="xMidYMid meet" style={{ minHeight:'20vh', marginLeft: 'auto', marginRight: 'auto' }}   data={data} />
+      </div>  
       <div style={{alignText: 'left'}}>
         <h2 style={{margin: '0 ', marginTop: '.5em', padding: '0'}}>
           ReactJS NodeJS SQL NoSQL SVG Dataviz GIS IoT
