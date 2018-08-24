@@ -2,12 +2,6 @@ import React from 'react';
 
 class Svg extends React.Component {
   
-  constructor(props) {
-    super(props);
-    
-  }
-
-
   render() {
     let pathsSet;
     

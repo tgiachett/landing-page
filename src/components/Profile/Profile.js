@@ -1,13 +1,11 @@
 import React from 'react';
 import SvgJsonContainer from './SvgJsonContainer';
 const data = require('./mars.json');
+// import "./breakpoints.css";
 
 class Profile extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-  // saved color inversion for experiments
+  
 
 
 
@@ -15,7 +13,7 @@ class Profile extends React.Component {
 render() {
   return (
     <div>
-      <SvgJsonContainer data={data} />
+      <SvgJsonContainer className="imageContainer" style={{maxWidth: '100%', minWidth: '320px'}} data={data} />
       <div>
         <h1 style={{margin: '0 ', padding: '0'}}>
           Tobia Giachetti
