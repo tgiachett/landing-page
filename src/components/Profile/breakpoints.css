@@ -1,42 +1,35 @@
 
-  /* .856 is ratio */
-  @media only screen and (min-height : 1070px) {
-    .container {
 
-      max-width: 1250px;
-      
-      
-    }
+.container {
+  height: 98vh;
+  
+}
+
+
+
+
+@media screen and (orientation:portrait) {
+  .container {
+    height: 98vh;
+    
+  }
+}
+
+@media screen and (orientation:landscape) {
+  .container {
+    height: 98vh;
+    
   }
   
-   
-  
-  @media only screen and (min-height : 750px) and (max-height: 1070px) {
-    .container {
 
-      max-width: 877px;
-      
-      
-  
-    }
-  }
-  
-  @media only screen and (min-height : 410px) and (max-height: 750px) {
-    .container {
+}
 
-      max-width: 679px;
-      
-      
-  
-    }
-  }
 
-  @media only screen and (min-height : 310px) and (max-height: 410px) {
-    .container {
 
-      max-width: 362px;
-      
-      
-  
-    }
-  }
+
+/* .sectionOne {
+  height: 85vh;
+}
+.sectionTwo {
+  height: 15vh;
+} */
