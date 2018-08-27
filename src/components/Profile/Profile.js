@@ -8,16 +8,16 @@ class Profile extends React.Component {
 
 render() {
   return (
-      <div className='container' style={{display: 'flex', flexDirection: 'column',  marginTop:'.5vh', marginLeft: '.5vw'}}>
-        <div >
-          <SvgJsonContainer className="imageContainer" preserveAspectRatio="xMidYMid meet" height='85vh' style={{ marginLeft: 'auto', marginRight: 'auto' }}   data={data} />
+      <div className='container' style={{ boxSizing: 'border-box', display: 'flex', flexDirection: 'column',  marginTop:'.5vh', marginLeft: '.5vw', backgroundColor: '#f0ead6'}}>
+        <div className="image" style={{display: 'flex',flexGrow: 5, fontSize: '2vh', alignText: 'left'}} >
+          <SvgJsonContainer  preserveAspectRatio="xMidYMid meet" style={{flexGrow: 5}} data={data} />
         </div>  
-        <div style={{height: '10vh', fontSize: '2vh', alignText: 'left'}}>
-          <h1 style={{margin: '0 ', padding: '0'}}>
+        
+          <h1 style={{margin: '0 ', padding: '0', fontSize: '2vh'}}>
             ReactJS NodeJS SQL NoSQL SVG Dataviz GIS IoT
           </h1>
           <div style={{height: '30%', alignText: 'left'}}>
-          <h1 style={{margin: '0 ', padding: '0'}}>
+          <h1 style={{margin: '0 ', padding: '0', fontSize: '2vh'}}>
             Tobia Giachetti
           </h1>
           <div><a style={{ marginRight: '1em'}} href="mailto:tgiachett@gmail.com">
@@ -41,7 +41,7 @@ render() {
           </div>
           
         </div>
-      </div>
+      
     
   );
   }

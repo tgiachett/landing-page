@@ -1,7 +1,7 @@
 
 
 .container {
-  height: 98vh;
+  height: 98%;
   
 }
 
@@ -10,7 +10,12 @@
 
 @media screen and (orientation:portrait) {
   .container {
-    height: 98vh;
+    
+    
+  }
+  .image {
+    width: 98vw;
+    
     
   }
 }
