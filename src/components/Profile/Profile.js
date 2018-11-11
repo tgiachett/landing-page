@@ -14,7 +14,7 @@ render() {
         </div>  
         <div style={{height: '10vh', fontSize: '2vh', alignText: 'left'}}>
           <h1 style={{margin: '0 ', padding: '0'}}>
-            ReactJS NodeJS SQL NoSQL SVG Dataviz GIS IoT
+            ReactJS NodeJS SQL NoSQL SVG
           </h1>
           <div style={{height: '30%', alignText: 'left'}}>
           <h1 style={{margin: '0 ', padding: '0'}}>
