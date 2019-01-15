@@ -10,7 +10,7 @@ render() {
   return (
       <div className='container' style={{display: 'flex', flexDirection: 'column',  marginTop:'.5vh', marginLeft: '.5vw'}}>
         <div >
-          <SvgJsonContainer className="imageContainer" preserveAspectRatio="xMidYMid meet" style={{ marginLeft: 'auto', marginRight: 'auto' }}   data={data} />
+          <SvgJsonContainer className="imageContainer" preserveAspectRatio="xMidYMid meet" height='85vh' style={{ marginLeft: 'auto', marginRight: 'auto' }}   data={data} />
         </div>  
         <div style={{height: '20px', fontSize: '2vh', alignText: 'left'}}>
           <h1 style={{margin: '0 ', padding: '0'}}>
