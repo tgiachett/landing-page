@@ -16,7 +16,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^2.0.1"
   },
   "browserslist": [
     ">0.2%",
