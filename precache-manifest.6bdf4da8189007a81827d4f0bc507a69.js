@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/landing-page/static/js/runtime~main.66b0208a.js"
   },
   {
-    "revision": "0aa8afc83c69e8b24e45",
-    "url": "/landing-page/static/js/2.a58a1559.chunk.js"
+    "revision": "e90574d74274c7fb4d49",
+    "url": "/landing-page/static/js/2.c39fed63.chunk.js"
   },
   {
-    "revision": "73801ae3723ba55bd83d71efed4876dd",
+    "revision": "32cb44264a68f2a2e1e49f74129f0e45",
     "url": "/landing-page/index.html"
   }
 ];
