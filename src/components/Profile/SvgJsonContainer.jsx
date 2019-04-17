@@ -16,6 +16,7 @@ class SvgJsonContainer extends React.Component {
         for (let i = 0; i < paths.length; i++) {
             initialColorState[`style${i}`] = paths[i].attributes.fill;
         }
+        
         return initialColorState;
     }
     //helper method for converting hex colors to rgb
@@ -37,8 +38,8 @@ class SvgJsonContainer extends React.Component {
     }
 
     //helper method to assemble hex from red green and blue hex channels
-    rgbToHex = (r, g, b) => {
-        return "#" + this.channelToHex(r) + this.channelToHex(g) + this.channelToHex(b);
+    rgbToHex = (rgb) => {
+        return "#" + this.channelToHex(rgb[0]) + this.channelToHex(rgb[1]) + this.channelToHex(rgb[2]);
     }
     //helper method that gets a random hex color
     getRandomColor =() => {
@@ -54,15 +55,7 @@ class SvgJsonContainer extends React.Component {
     colorTransform = (orig, key) => {
         let color = this.hextoRgb(orig),
             targetColorRgb = this.hextoRgb(this.getRandomColor());
-        // refactor determine negative or positive vector for each
-        //set an interval for each value clearing the interval when each channel is done
 
-        // for (let i = 0; color.length; i++) {
-        //     let deltaSign = color[i]
-        // }
-        // function cycleOne (deltaSign, src, target) {
-            
-        // }
 
         let cycle = setInterval(() => {
 
