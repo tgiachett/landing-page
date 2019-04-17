@@ -8,9 +8,9 @@ class Svg extends React.Component {
     if (this.props.paths != null) {
       pathsSet = this.props.paths.map((p,i)=> {
          
-        return <path key={i} d={p.attributes.d} fill={this.props.pathStyleState[`style${i}`]}/>
+          return <path key={i} d={p.attributes.d} fill={this.props.pathStyleState[`style${i}`]}/>;
          
-     })
+      });
     }
     
     
@@ -32,7 +32,7 @@ class Svg extends React.Component {
 
     </svg> 
 
-    )}
+    );}
 
   }
 
