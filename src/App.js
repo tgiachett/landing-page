@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import './App.css';
-import Profile from './components/Profile/Profile';
+import Main_Page from './components/Main_Page/Main_Page';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Profile />
+        <Main_Page />
       </div>
     );
   }
